@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>todo page</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/css/styles.css" rel="stylesheet" type="text/css" />
+        <script src="/js/todo-list.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-3 col-lg-6 col-sm-6" id="todo-table">
+                             <form class="form-inline" method="POST" action="/todo">
+                                <input type="text" class="form-control" name="item" placeholder="Add new item..." required />
+                                <button type="submit" class="btn btn-primary" >Add item</button>
+                            </form>
+                            <ul>
+                                <%for(var i = 0; i < todos.length; i++){%>
+                                    <li><%=todos[i].item%></li>
+                                <%}%>
+                            </ul>         
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
